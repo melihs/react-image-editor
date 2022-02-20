@@ -1,0 +1,44 @@
+$dark-smoke: #252627;
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: $dark-smoke;
+  border-left: 1px solid $dark-smoke;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+
+  .sidebar-item {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    position: relative;
+    background-color: $dark-smoke;
+    color: white;
+    transition: background-color 150ms ease-in-out;
+
+    &:hover,:focus {
+      background-color: hsl(210, 3%, 36%, 1.0);
+      color: white;
+    }
+
+    &.active {
+      background-color: green;
+    }
+
+    &::after {
+      content: '';
+      width: 80%;
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      height: 1px;
+      background-color: white;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
